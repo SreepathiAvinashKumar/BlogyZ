@@ -4,7 +4,7 @@ import { useState } from "react";
 const client = new Client({});
 client
     .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('65e36a7c482aff2fa7ed')
+    .setProject(process.env.PROJECT_ID)
 
     export async function isUserLoggedIn() {
         try {
