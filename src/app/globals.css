@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -30,4 +32,52 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+h1, h2, h3, h4, h6 {
+  margin:1rem; /* Remove default margins */
+  font-weight: bold; /* Set default font weight */
+  line-height: 1.2; /* Set default line height */
+}
+
+h5{
+  margin: 0.2rem;
+}
+
+/* Styles for h1 */
+h1 {
+  font-size: 2.5rem; /* Adjust font size as needed */
+}
+
+/* Styles for h2 */
+h2 {
+  font-size: 2rem; /* Adjust font size as needed */
+}
+
+/* Styles for h3 */
+h3 {
+  font-size: 1.75rem; /* Adjust font size as needed */
+}
+
+/* Styles for h4 */
+h4 {
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+/* Styles for h5 */
+h5 {
+  font-size: 1.25rem; /* Adjust font size as needed */
+}
+
+/* Styles for h6 */
+h6 {
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+
+* {
+  font-family: "Poppins" !important;
+  font-weight: 200 !important;
+  font-style: normal;
 }

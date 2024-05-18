@@ -1,0 +1,6 @@
+framer-motion
+material-tailwind/react
+react-quill
+react
+
+
