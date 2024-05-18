@@ -75,7 +75,7 @@ export function NavBar() {
                     variant="h4"
                     className="mr-4 cursor-pointer flex items-center justify-center"
                 >
-                    <Image alt="Logo" width={60} height={60} src={"/images/icon.png"} />
+                    <Image alt="Logo" width={60} height={60} src={"/Images/icon.png"} />
                     BlogyZ
                 </Typography>
 
