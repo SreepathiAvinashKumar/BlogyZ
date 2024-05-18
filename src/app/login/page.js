@@ -20,24 +20,12 @@ const Login = () => {
     setIsUserLog(!isUserLog);
   };
 
-   const handleSignUp = async () => {
-    try {
-      await account.createEmailPasswordSession(email, password);
-      setEmail('');
-      setPassword('');
-      // router.push('/');
-        } catch (error) {
-      console.error('Error signing in:', error);
-    }
+  const handleSignUp = () => {
+    // Your sign-up logic here
   };
 
-  const handleSignIn =async  () => {
-    try {
-      await account.create(ID.unique(), email, password, username);
-      await handleSignIn();
-    } catch (error) {
-      console.error('Error signing up:', error);
-    }
+  const handleSignIn = () => {
+    // Your sign-in logic here
   };
 
   return (

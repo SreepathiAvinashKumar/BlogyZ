@@ -5,6 +5,7 @@ import Link from "next/link";
 import { account, isUserLoggedIn } from "./appwriteConfig";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+// import Loading from '../components/Loading';
 import Image from "next/image";
 import { getLoggedInUser } from "./appwriteConfig";
 
