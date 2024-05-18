@@ -111,8 +111,7 @@ export const Header = () => {
      <Card className="bg-neutral text-white max-w-[20rem] mx-8 my-[-10rem] z-10">
       <CardHeader floated={true} className="bg-neutral" >
         {/* <img src="/images/myphoto.png" alt="profile-picture" /> */}
-        <Image src={"/images/mypic-design.png"} alt="profile-picture" />
-        <Image src={require('public/images/mypic-design.png')} alt="profile-picture" />
+        <Image src={"/images/mypic-design.png"} width={200} height={200} alt="profile-picture" />
       </CardHeader>
       <CardBody className="text-center">
         <Typography variant="h4" color="blue-gray" className="mb-2">
