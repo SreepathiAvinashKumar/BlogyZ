@@ -35,8 +35,8 @@ const BlogPage = ({ params }) => {
         const databases = new Databases(client);
 
         const result = databases.listDocuments(
-            '663ee032001ee51813d2',
-            '663ee03c0018afa72422', [
+            process.env.DATABASE_ID,
+            process.env.COLLECTION_ID, [
             Query.equal('slug', slug)
         ]
         );
