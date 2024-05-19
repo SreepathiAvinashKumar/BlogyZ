@@ -27,7 +27,6 @@ client
 
 const BlogPage = ({ params }) => {
 
-
     const [blogPosts, setBlogPosts] = useState();
     const { slug } = params;
 
@@ -45,7 +44,7 @@ const BlogPage = ({ params }) => {
         );
 
         result.then( async function (response) {
-            console.log(response);
+            console.log(response+"This is slug page");
             setBlogPosts(response.documents[0]);
         }), function (error) {
             console.log(error);
