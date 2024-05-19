@@ -63,6 +63,8 @@ const CardDescription = ({ className, children }) => {
   );
 };
 
+console.log(items);
+
   return (
     <div
       className={cn(
@@ -78,7 +80,9 @@ const CardDescription = ({ className, children }) => {
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
-        >
+          >
+          {console.log(item)}
+          {alert(item.slug)}
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
