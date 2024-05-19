@@ -33,9 +33,9 @@ function stripHtmlTags(html) {
         className
       )}
     >
-      {items.map((item, idx) => (
+      {items && items.map((item, idx) => (
         <Link
-        href={` ../blog/${item.slug}`}
+        href={`./blog/${item.slug}`}
           key={idx}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
