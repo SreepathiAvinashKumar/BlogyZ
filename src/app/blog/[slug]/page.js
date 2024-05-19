@@ -31,7 +31,10 @@ const BlogPage = ({ params }) => {
     const [blogPosts, setBlogPosts] = useState();
     const { slug } = params;
 
-    useEffect(() => {
+     useEffect(() => {
+
+        (async ()=> {
+
         const databases = new Databases(client);
 
         const result = databases.listDocuments(
@@ -41,12 +44,15 @@ const BlogPage = ({ params }) => {
         ]
         );
 
-        result.then(function (response) {
-            // console.log(response);
+        result.then( async function (response) {
+            console.log(response);
             setBlogPosts(response.documents[0]);
         }), function (error) {
             console.log(error);
         }
+
+        })()
+         
 
     }, []);
 
