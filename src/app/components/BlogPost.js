@@ -7,7 +7,6 @@ import Skeleton from "./Skeleton";
 import { useState, useEffect } from "react";
 import { HoverEffect } from "./card_hover_effect";
 
-
 export function BlogPost({ BlogPosts }) {
 
     const [loading, setLoading] = useState(true);
