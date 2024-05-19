@@ -16,6 +16,8 @@ const HoverEffect = ({ items, className }) => {
     return content;
 };
 
+
+
 function stripHtmlTags(html) {
   // Create a temporary element to parse the HTML
   var tempElement = document.createElement('div');
@@ -68,9 +70,10 @@ const CardDescription = ({ className, children }) => {
         className
       )}
     >
+    
       {items && items.map((item, idx) => (
         <Link
-        href={`./blog/${item.slug}`}
+        href={`.blog/${item.slug}`}
           key={idx}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
