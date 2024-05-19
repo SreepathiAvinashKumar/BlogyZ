@@ -22,7 +22,7 @@ import TracingBeam from "@/app/components/ui/TracingBeam";
 const client = new Client();
 client
     .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject(process.env.PROJECT_ID);
+    .setProject('65e36a7c482aff2fa7ed');
 
 
 const BlogPage = ({ params }) => {
