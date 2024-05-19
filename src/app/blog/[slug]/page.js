@@ -44,7 +44,7 @@ const BlogPage = ({ params }) => {
         );
 
         result.then( async function (response) {
-            console.log(response+"This is slug page");
+            
             setBlogPosts(response.documents[0]);
         }), function (error) {
             console.log(error);

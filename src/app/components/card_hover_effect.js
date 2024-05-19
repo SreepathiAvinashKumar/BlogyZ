@@ -17,7 +17,6 @@ const HoverEffect = ({ items, className }) => {
 };
 
 
-
 function stripHtmlTags(html) {
   // Create a temporary element to parse the HTML
   var tempElement = document.createElement('div');
@@ -63,8 +62,6 @@ const CardDescription = ({ className, children }) => {
   );
 };
 
-console.log(items);
-
   return (
     <div
       className={cn(
@@ -81,8 +78,7 @@ console.log(items);
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
           >
-          {console.log(item)}
-          {alert(item.slug)}
+
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
