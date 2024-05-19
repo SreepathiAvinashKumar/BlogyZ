@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { cn } from "../../utils/cn";
+import { cn } from "../utils/cn";
 import Image from "next/image";
 
 const HoverEffect = ({ items, className }) => {
