@@ -51,7 +51,7 @@ export const HeroParallax = ({ products }) => {
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex  self-auto [perspective:1000px] [transform-style:preserve-3d]  sm:flex-col"
     >
       <Header />
       <motion.div
@@ -97,7 +97,7 @@ export const HeroParallax = ({ products }) => {
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl flex relative mx-auto py-20 md:py-8 px-4 w-full  left-0 top-0">
+    <div className="max-w-7xl flex md:top-5 md:flex-row relative mx-auto py-20  md:py-8 px-4 w-full  left-0 top-0">
       <div>
         <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
           Sripathi. <br /> Avinash Kumar
@@ -111,13 +111,13 @@ export const Header = () => {
       </div>
 
       <Card className="bg-neutral text-white max-w-[20rem] mx-8 my-[-10rem] z-10">
-        <CardHeader floated={true} className="bg-neutral">
+        <CardHeader floated={true} className="bg-neutral ">
           {/* <img src="/images/myphoto.png" alt="profile-picture" /> */}
           <img src={"/Images/mypic-design.png"} alt="profile-picture" />
         </CardHeader>
         <CardBody className="text-center">
           <Typography variant="h4" color="blue-gray" className="mb-2">
-            Natalie Paisley
+            Avinash Kumar
           </Typography>
           <Typography className="mb-2" color="blue-gray">
             Software Developer/ Full Stack Engineer/ ML Engineer

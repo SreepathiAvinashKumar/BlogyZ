@@ -34,10 +34,14 @@ const contact = () => {
        <div className="flex items-center bg-neutral-950 justify-center flex-wrap">
        <Image className="mx-12" width={600} height={300} src={"https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} /> 
 
+
+
          <Card className="flex justify-center  bg-neutral items-center px-1 py-5" color="white" shadow={true}>
-            <Typography variant="h2" color="white">
+
+         <Typography variant="h2" color="white">
                 Contact Us
             </Typography>
+           
 
             <form action="https://formsubmit.co/458119730fe160202ef8a7de0fd7f758" method="POST" className=" mb-2  w-80 max-w-screen-lg">
 

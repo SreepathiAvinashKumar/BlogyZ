@@ -34,15 +34,15 @@ const BlogPage = ({ params }) => {
     useEffect(() => {
         const databases = new Databases(client);
 
-        const result = databases.listDocuments(
+        const result =  databases.listDocuments(
             '663ee032001ee51813d2',
             '663ee03c0018afa72422', [
             Query.equal('slug', slug)
         ]
         );
 
-        result.then(function (response) {
-            // console.log(response);
+        result.then( async function (response) {
+            console.log(response);
             setBlogPosts(response.documents[0]);
         }), function (error) {
             console.log(error);
@@ -54,9 +54,13 @@ const BlogPage = ({ params }) => {
     return (
         <div>
             <NavBar />
+
+
             <TracingBeam className="">
             <div className="antialiased pt-4 relative">
-                {blogPosts &&  <Card className=" bg-neutral-950 overflow-hidden">
+                {blogPosts && 
+                
+                <Card className=" bg-neutral-950 overflow-hidden">
                     <CardHeader
                         floated={false}
                         shadow={false}
@@ -69,11 +73,13 @@ const BlogPage = ({ params }) => {
                             className="object-fill h-full w-full"
                         />
                     </CardHeader>
-                    <CardBody className="text-center ">
-                        <Typography  variant="h4" color="white">
+
+                    <CardBody className=" font-normal">
+                        <Typography  variant="h1" color="white" className="text-center m-2 p-2 text-[6vw] sm:text-5xl">
                            {blogPosts.title}
                         </Typography>
-                        <Typography variant="lead" color="white" className="m-5 px-5 leading-loose font-normal" dangerouslySetInnerHTML={{ __html: blogPosts.content }} >
+
+                        <Typography variant="lead" color="white" className="m-6 px-5 leading-3 font-normal text-[3.5vw] sm:text-xl" dangerouslySetInnerHTML={{ __html: blogPosts.content }} >
                         
                         </Typography>
                     </CardBody>
