@@ -1,3 +1,4 @@
+'use client'
 import { Button, Input, Typography } from "@material-tailwind/react";
 
 export function NewsLetter3() {

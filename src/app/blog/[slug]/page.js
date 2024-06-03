@@ -44,11 +44,8 @@ const BlogPage = ({ params }) => {
         );
 
         result.then( async function (response) {
-<<<<<<< HEAD
             console.log(response);
-=======
             
->>>>>>> 4fc79af861b163f66008b9fd25bb0b1f0fddb23c
             setBlogPosts(response.documents[0]);
         }), function (error) {
             console.log(error);

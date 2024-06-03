@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { Account,Client } from "appwrite";
-=======
 import { Account ,Client} from "appwrite";
 import { useState } from "react";
 
@@ -28,7 +25,6 @@ export async function getLoggedInUser() {
     return null;
   }
 }
->>>>>>> 4fc79af861b163f66008b9fd25bb0b1f0fddb23c
 
 
     export const account = new Account(client);
