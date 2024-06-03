@@ -1,10 +1,13 @@
+<<<<<<< HEAD
+import { Account,Client } from "appwrite";
+=======
 import { Account ,Client} from "appwrite";
 import { useState } from "react";
 
 const client = new Client({});
 client
     .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('65e36a7c482aff2fa7ed')
+    .setProject(process.env.PROJECT_ID)
 
     export async function isUserLoggedIn() {
         try {
@@ -25,12 +28,7 @@ export async function getLoggedInUser() {
     return null;
   }
 }
+>>>>>>> 4fc79af861b163f66008b9fd25bb0b1f0fddb23c
 
 
-
-
-
-
-export const account = new Account(client);
-
-export {ID} from 'appwrite';
+    export const account = new Account(client);

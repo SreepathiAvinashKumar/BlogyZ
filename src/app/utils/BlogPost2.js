@@ -12,8 +12,8 @@ import {
 
 
 import Link from "next/link";
-import Loading from "./Loading";
-import Skeleton from "./Skeleton";
+import Loading from "../components/Loading";
+import Skeleton from "../components/Skeleton";
 import { useState, useEffect } from "react";
 
 
@@ -71,7 +71,7 @@ export function BlogPost({ BlogPosts }) {
                         <Typography variant="h6" color="blue-gray" className="md:text-[0.9rem] lg:text-[1rem]">
                             {post.title}
                         </Typography>
-                        <Typography variant="paragraph" color="gray" className="mt-4 text-sm  max-w-[22rem] font-normal mx-1">
+                        <Typography variant="small" color="gray" className="mt-4 text-sm  max-w-[22rem] font-normal mx-1">
                          {truncateContent(stripHtmlTags(post.content))}
                         </Typography>
                     </CardBody>
