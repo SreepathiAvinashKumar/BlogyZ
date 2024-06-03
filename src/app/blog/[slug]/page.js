@@ -43,9 +43,8 @@ const BlogPage = ({ params }) => {
         ]
         );
 
-        result.then( async function (response) {
-            console.log(response);
-            
+        result.then(function (response) {
+            // console.log(response);
             setBlogPosts(response.documents[0]);
         }), function (error) {
             console.log(error);
@@ -60,6 +59,8 @@ const BlogPage = ({ params }) => {
     return (
         <div>
             <NavBar />
+
+
 
 
             <TracingBeam className="">

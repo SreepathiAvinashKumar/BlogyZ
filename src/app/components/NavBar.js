@@ -3,7 +3,8 @@
 import { Navbar, Collapse, Typography, IconButton, Button } from "@material-tailwind/react";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+// import Loading from '../components/Loading';
 import Image from "next/image";
 import AuthContext from "./AuthContext";
 
@@ -16,10 +17,15 @@ export function NavBar({user}) {
 
 
     const handleLogout = async () => {
-       await logout();
+        try {
+            await account.deleteSession('current');
+            alert("User Signout");
+           setUserLog( await getUser());
+           router.push('/');
+        } catch (error) {
+            console.error('Error logging out:', error);
+        }
     };
-
-    
 
     const handleWindowResize = () =>
         window.innerWidth >= 960 && setOpenNav(false);
