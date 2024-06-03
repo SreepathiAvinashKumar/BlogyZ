@@ -1,7 +1,6 @@
 'use client'
 import { Alert, Button } from "@material-tailwind/react";
 import React from "react";
-
  
  function AlertMessage({which,status}) {
 

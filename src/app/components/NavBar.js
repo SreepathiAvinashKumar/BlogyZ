@@ -2,57 +2,26 @@
 
 import { Navbar, Collapse, Typography, IconButton, Button } from "@material-tailwind/react";
 import Link from "next/link";
-import { account, isUserLoggedIn } from "./appwriteConfig";
 import { useRouter } from 'next/navigation';
+<<<<<<< HEAD
+import { useContext, useEffect, useState } from 'react';
+=======
 import { useEffect, useState } from 'react';
 // import Loading from '../components/Loading';
+>>>>>>> 4fc79af861b163f66008b9fd25bb0b1f0fddb23c
 import Image from "next/image";
-import { getLoggedInUser } from "./appwriteConfig";
+import AuthContext from "./AuthContext";
 
-
-async function getUser() {
-    const user = await getLoggedInUser();
-
-    if(user){
-        return true;
-    }
-        return false;
-   
-}
-
-export function NavBar() {
-
+export function NavBar({user}) {
+    const {logout} = useContext(AuthContext);
 
     const router = useRouter();
 
     const [openNav, setOpenNav] = useState(false);
 
-    const [isUserLog, setUserLog] = useState(null);
-
-    useEffect(() => {
-
-        const checkUserLogin = async () => {
-            try {
-                setUserLog( await getUser());
-            } catch (error) {
-                console.error('Error checking user login status:', error);
-            }
-        };
-
-        checkUserLogin();
-    }, []);
-
-
 
     const handleLogout = async () => {
-        try {
-            await account.deleteSession('current');
-            alert("User Signout");
-           setUserLog( await getUser());
-           router.push('/');
-        } catch (error) {
-            console.error('Error logging out:', error);
-        }
+       await logout();
     };
 
     const handleWindowResize = () =>
@@ -65,8 +34,9 @@ export function NavBar() {
         };
     }, []);
 
+    
     return (
-        <Navbar className="sticky border-0  mb-2 bg-neutral-950  text-white top-0 z-30 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 ">
+        <Navbar  className={"sticky border-0 mb-2 bg-neutral-950  text-white top-0 z-30 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 "}>
             <div className=" flex items-center  justify-between">
 
                 <Typography
@@ -75,12 +45,12 @@ export function NavBar() {
                     variant="h4"
                     className="mr-4 cursor-pointer flex items-center justify-center"
                 >
-                    <Image alt="Logo" width={60} height={60} src={"/images/icon.png"} />
+                    <Image alt="Logo" width={60} height={60} src={"/Images/icon.png"} />
                     BlogyZ
                 </Typography>
 
                 <div className="hidden lg:block">
-                    <ul className="my-2 flex flex-col text-white gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                    <ul className={"my-2 flex flex-col text-white gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"}>
 
                         <Typography
                             as="li"
@@ -110,12 +80,13 @@ export function NavBar() {
                             className="p-1 font-medium"
                         >
 
-                            {(!isUserLog) ? (
-
-                                <Link href="../login" className="flex items-center hover:text-blue-500 transition-colors">
-                                    Account
-                                </Link>) : (
+                            {(user) ? (
                                 <Button onClick={handleLogout}>Logout</Button>
+                              )
+                                 : (
+                                    <Link href="../login" className="flex items-center hover:text-blue-500 transition-colors">
+                                    Account
+                                </Link>
                             )}
 
                         </Typography>
@@ -127,15 +98,15 @@ export function NavBar() {
                             className="p-1 font-medium"
                         >
 
-                            {(!isUserLog) ? (
-
-                                <Button onClick={() => { router.push('/login') }} className="flex items-center transition-colors">
+                            {(user) ? (
+                            <Link href="../publish" className="flex items-center transition-colors">
+                            Write Blog
+                            </Link>)
+                                : (
+                            <Button onClick={() => { router.push('/login') }} className="flex items-center transition-colors">
                                     Write Blog
-                                </Button>) : (
-                                <Link href="../publish" className="flex items-center transition-colors">
-                                    Write Blog
-                                </Link>
-                            )}
+                                </Button> )
+                            }
 
 
 
@@ -185,7 +156,7 @@ export function NavBar() {
                         color="blue-gray"
                         className="p-1 font-medium"
                     >
-                        {(!isUserLog) ? (
+                        {(!user) ? (
 
                             <Link href="../login" className="flex items-center hover:text-blue-500 transition-colors">
                                 Account

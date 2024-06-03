@@ -41,28 +41,28 @@ function Skeleton() {
         </Typography>
         <Typography
           as="div"
-          variant="paragraph"
+          variant="small"
           className="mb-2 h-2 w-full rounded-full bg-neutral-950"
         >
           &nbsp;
         </Typography>
         <Typography
           as="div"
-          variant="paragraph"
+          variant="small"
           className="mb-2 h-2 w-full rounded-full bg-neutral-950"
         >
           &nbsp;
         </Typography>
         <Typography
           as="div"
-          variant="paragraph"
+          variant="small"
           className="mb-2 h-2 w-full rounded-full bg-neutral-950"
         >
           &nbsp;
         </Typography>
         <Typography
           as="div"
-          variant="paragraph"
+          variant="small"
           className="mb-2 h-2 w-full rounded-full bg-neutral-950"
         >
           &nbsp;

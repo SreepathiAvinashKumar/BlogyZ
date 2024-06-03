@@ -1,25 +1,32 @@
-'use client'
-import { Card, Input, Button, Typography, Spinner } from "@material-tailwind/react";
+"use client";
+import {
+  Card,
+  Input,
+  Button,
+  Typography,
+  Spinner,
+} from "@material-tailwind/react";
 import FooterLevel from "../components/Footer";
-import { ID, account, isUserLoggedIn } from "../components/appwriteConfig";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavBar } from "../components/NavBar";
 import AlertMessage from "../components/AlertMessage";
 import { motion } from "framer-motion";
 import { ImgWithShadow } from "../components/ui/ImageWithShadow";
-import { useRouter } from "next/navigation";
+import AuthContext from "../components/AuthContext";
+import Link from "next/link";
 
 const Login = () => {
-  const [isUserLog, setIsUserLog] = useState(false);
-  const [signupVal, setSignupVal] = useState(false);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { user, login } = useContext(AuthContext);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleClick = () => {
-    setIsUserLog(!isUserLog);
+  const handleSignIn = async () => {
+    await login(email, password);
   };
 
+<<<<<<< HEAD
+=======
   const handleSignUp = () => {
     // Your sign-up logic here
   };
@@ -27,10 +34,11 @@ const Login = () => {
   const handleSignIn = () => {
     // Your sign-in logic here
   };
+>>>>>>> 4fc79af861b163f66008b9fd25bb0b1f0fddb23c
 
   return (
     <>
-      <NavBar userStatus={isUserLog} updateUserState={handleClick} />
+      <NavBar user={user} />
       <motion.div
         initial={{ opacity: 0.0, y: 5 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -41,11 +49,16 @@ const Login = () => {
         }}
         className="mt-1"
       >
-        <div className="flex bg-neutral-950 flex-row justify-around justify-center items-center md:flex-wrap ">
-          {signupVal && <AlertMessage status={"success"} which={"signup"} />}
-          <ImgWithShadow/>
-          <Card shadow={true} className="max-w-[56rem] bg-neutral mb-8 max-h-[36rem] self-center p-6 items-center">
-            <Typography variant="h2" color="white">Account</Typography>
+        <div className="flex bg-neutral-950 flex-row py-6 justify-around justify-center items-center md:flex-wrap">
+          {user && <AlertMessage status={"success"} which={"signup"} />}
+          <ImgWithShadow />
+          <Card
+            shadow={true}
+            className="max-w-[56rem] bg-neutral mb-8 max-h-[36rem] self-center p-6 items-center"
+          >
+            <Typography variant="h2" color="white">
+              Account
+            </Typography>
             <Typography color="white" className="mt-1 font-normal">
               Nice to meet you! Enter your details to register.
             </Typography>
@@ -56,7 +69,9 @@ const Login = () => {
                 </Typography>
                 <Input
                   size="lg"
-                  onChange={(e) => { setUsername(e.target.value) }}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                  }}
                   placeholder="name"
                   className="!border-t-green-200 focus:!border-white !text-white"
                   labelProps={{
@@ -69,7 +84,9 @@ const Login = () => {
                 <Input
                   type="email"
                   size="lg"
-                  onChange={(e) => { setEmail(e.target.value) }}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   placeholder="name@mail.com"
                   className="!border-t-green-200 focus:!border-white !text-white"
                   labelProps={{
@@ -82,7 +99,9 @@ const Login = () => {
                 <Input
                   type="password"
                   size="lg"
-                  onChange={(e) => { setPassword(e.target.value) }}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   placeholder="********"
                   className="!border-t-green-200 focus:!border-white !text-white"
                   labelProps={{
@@ -90,13 +109,20 @@ const Login = () => {
                   }}
                 />
               </div>
-              <div className="flex justify-center">
-                <Button onClick={handleSignUp} className="mt-6 mx-2 color-white bg-blue-600">
-                  Sign up
+              <div className="">
+                <Button
+                  onClick={handleSignIn}
+                  className="mt-6 mx-2 color-white bg-blue-600"
+              fullWidth  > 
+                  Sign in
                 </Button>
-                <Button onClick={handleSignIn} className="mt-6 mx-2 bg-blue-600">
-                  Sign In
-                </Button>
+                
+                <Typography className="block mt-4 font-sans text-base antialiased font-normal leading-relaxed text-center text-gray-700">
+                  Already have an account?
+                  <Link href="../signup" className="font-medium m-2 text-white">
+                    Sign Up
+                  </Link>
+                </Typography>
               </div>
             </form>
           </Card>
