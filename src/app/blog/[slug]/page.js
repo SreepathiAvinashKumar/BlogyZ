@@ -27,11 +27,13 @@ client
 
 const BlogPage = ({ params }) => {
 
-
     const [blogPosts, setBlogPosts] = useState();
     const { slug } = params;
 
-    useEffect(() => {
+     useEffect(() => {
+
+        (async ()=> {
+
         const databases = new Databases(client);
 
         const result =  databases.listDocuments(
@@ -42,11 +44,18 @@ const BlogPage = ({ params }) => {
         );
 
         result.then( async function (response) {
+<<<<<<< HEAD
             console.log(response);
+=======
+            
+>>>>>>> 4fc79af861b163f66008b9fd25bb0b1f0fddb23c
             setBlogPosts(response.documents[0]);
         }), function (error) {
             console.log(error);
         }
+
+        })()
+         
 
     }, []);
 
