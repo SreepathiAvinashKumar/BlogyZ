@@ -3,7 +3,7 @@
 import { Navbar, Collapse, Typography, IconButton, Button } from "@material-tailwind/react";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useContext } from 'react';
 // import Loading from '../components/Loading';
 import Image from "next/image";
 import AuthContext from "./AuthContext";
