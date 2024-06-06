@@ -25,16 +25,6 @@ const Login = () => {
     await login(email, password);
   };
 
-<<<<<<< HEAD
-=======
-  const handleSignUp = () => {
-    // Your sign-up logic here
-  };
-
-  const handleSignIn = () => {
-    // Your sign-in logic here
-  };
->>>>>>> 4fc79af861b163f66008b9fd25bb0b1f0fddb23c
 
   return (
     <>
