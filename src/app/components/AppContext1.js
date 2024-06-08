@@ -5,13 +5,12 @@ import { useRouter } from "next/navigation";
 import { Client,Account } from "appwrite";
 import AuthContext from "./AuthContext";
 
-
 const client = new Client({});
 client
     .setEndpoint('https://cloud.appwrite.io/v1')
     .setProject('65e36a7c482aff2fa7ed')
     
-    const account = new Account(client);
+var account = new Account(client);
 
 export async function getLoggedInUser() {
   try {
@@ -28,12 +27,12 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  
   useEffect(() => {
     const getUser = async () => {
       try {
         const user = await account.get();
         setUser(user);
+        console.log(user);
         router.push("/");
       } catch (error) {
         console.log('No user session found', error);
@@ -46,7 +45,8 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     const response = await account.createEmailPasswordSession(email, password);
-    setUser(response.user);
+    const user = await account.get(); 
+    setUser(user);
     router.push("/");
   };
 
@@ -58,6 +58,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const setUserLog = (userLog) =>{
+    account = userLog;
+  }
+
   const signup = async (email, password, username) => {
     await account.create(ID.unique(), email, password, username);
     await account.createEmailSession(email, password);
@@ -65,7 +69,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading,login, logout, signup }}>
+    <AuthContext.Provider value={{account,user, loading,login, logout, signup,setUserLog}}>
       
      <div> {!loading && children}</div>
 

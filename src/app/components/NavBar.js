@@ -8,8 +8,9 @@ import { useEffect, useState,useContext } from 'react';
 import Image from "next/image";
 import AuthContext from "./AuthContext";
 
+
 export function NavBar({user}) {
-    const {logout} = useContext(AuthContext);
+    const {logout,account,setUserLog} = useContext(AuthContext);
 
     const router = useRouter();
 
@@ -18,9 +19,11 @@ export function NavBar({user}) {
 
     const handleLogout = async () => {
         try {
-            await account.deleteSession('current');
+            // await account.deleteSession('current');
+            logout();
             alert("User Signout");
-           setUserLog( await getUser());
+            setUserLog(null);
+        //    setUserLog( await getUser());
            router.push('/');
         } catch (error) {
             console.error('Error logging out:', error);

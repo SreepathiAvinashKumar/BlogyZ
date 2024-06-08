@@ -1,5 +1,5 @@
-// src/lib/server/appwrite.js
-"use server";
+'use server'
+
 import { Client, Account } from "node-appwrite";
 import { cookies } from "next/headers";
 
@@ -23,6 +23,7 @@ export async function createSessionClient() {
   };
 }
 
+
 export async function createAdminClient() {
   const client = new Client()
     .setEndpoint('https://cloud.appwrite.io/v1')
@@ -35,7 +36,6 @@ export async function createAdminClient() {
     },
   };
 }
-
 
 
 export async function getLoggedInUser() {
