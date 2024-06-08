@@ -63,7 +63,7 @@ const BlogPage = ({ params }) => {
 
 
 
-            <TracingBeam className="">
+            <TracingBeam className="px-6">
             <div className="antialiased pt-4 relative">
                 {blogPosts && 
                 

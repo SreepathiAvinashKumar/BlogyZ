@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "../../utils/cn";
 
+
 const TracingBeam = ({ children, className }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -114,5 +115,12 @@ const TracingBeam = ({ children, className }) => {
     </motion.div>
   );
 };
+
+
+
+
+
+
+
 
 export default TracingBeam;

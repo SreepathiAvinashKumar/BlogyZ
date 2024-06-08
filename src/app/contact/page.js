@@ -43,7 +43,7 @@ const contact = () => {
             </Typography>
            
 
-            <form action="https://formsubmit.co/458119730fe160202ef8a7de0fd7f758" method="POST" className=" mb-2  w-80 max-w-screen-lg">
+            <form action="https://formsubmit.co/el/blogyz.netlify.app" method="POST" className=" mb-2  w-80 max-w-screen-lg">
 
                 <div className=" flex flex-col gap-6 container">
                     <Typography variant="h6" color="white" className="-mb-2">
